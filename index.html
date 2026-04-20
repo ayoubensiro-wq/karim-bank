@@ -45,7 +45,7 @@ button {
 .money {
     position: absolute;
     width: 40px;
-    animation: fall 5s linear infinite;
+    animation: fall linear infinite;
 }
 
 @keyframes fall {
@@ -53,7 +53,6 @@ button {
     to { top: 100vh; }
 }
 </style>
-
 </head>
 
 <body>
@@ -64,7 +63,7 @@ button {
 <img src="karim.jpeg" width="200">
 <img src="police.png.webp" width="200">
 
-<h2>واش بغيتي تربح فلوس؟ 💸</h2>
+<h2>واش بغيتي تربح فلوس؟ 💸💸</h2>
 
 <button id="yesBtn" onclick="like()">نعم 😍🔥</button>
 <button id="runBtn" onmouseover="runAway()">لا 😜</button>
@@ -85,14 +84,14 @@ function runAway() {
     btn.style.left = Math.random() * 400 + "px";
 }
 
-// money rain
-for (let i = 0; i < 20; i++) {
-    let money = document.createElement("img");
-    money.src = "https://cdn-icons-png.flaticon.com/512/2331/2331970.png";
-    money.className = "money";
-    money.style.left = Math.random() * 100 + "vw";
-    money.style.animationDuration = (Math.random() * 3 + 3) + "s";
-    document.body.appendChild(money);
+// rain money
+for (let i = 0; i < 30; i++) {
+    let img = document.createElement("img");
+    img.src = "https://cdn-icons-png.flaticon.com/512/2331/2331943.png";
+    img.className = "money";
+    img.style.left = Math.random() * 100 + "vw";
+    img.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(img);
 }
 </script>
 
