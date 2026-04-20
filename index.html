@@ -9,11 +9,16 @@
       background: linear-gradient(135deg, black, #0f2027);
       color: white;
       font-family: Arial;
-      overflow: hidden;
     }
 
     h1 {
       font-size: 40px;
+      margin-top: 30px;
+    }
+
+    img {
+      margin: 10px;
+      border-radius: 10px;
     }
 
     button {
@@ -35,64 +40,38 @@
       background: red;
       color: white;
     }
-
-    .money {
-      position: absolute;
-      font-size: 30px;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      from { top: -50px; }
-      to { top: 100vh; }
-    }
   </style>
 </head>
 
 <body>
 
-  <h1>🏦 Karim Bank 😎</h1>
-  <h2>واش بغيتي تربح فلوس؟ 💸</h2>
+<h1>🏦 Karim Bank 😎</h1>
 
-  <button id="yesBtn" onclick="like()">نعم 😍🔥</button>
+<img src="ayoub.jpg" width="200">
+<img src="karim.jpeg" width="200">
+<img src="police.png.webp" width="200">
 
-  <button id="runBtn" onmouseover="runAway()">لا 😂👎</button>
+<h2>واش بغيتي تربح فلوس؟ 💸😏</h2>
 
-  <p id="msg" style="margin-top:50px; font-size:20px;"></p>
+<button id="yesBtn" onclick="like()">نعم 😍🔥</button>
+<button id="runBtn" onmouseover="runAway()">لا 😅🚶</button>
 
-  <audio id="sound" src="https://www.soundjay.com/button/beep-07.mp3"></audio>
+<p id="msg" style="margin-top:50px; font-size:20px;"></p>
 
-  <script>
-    function like() {
-      document.getElementById("msg").innerHTML = "😎🔥 مبروك! ربحت معنا ف Karim Bank 💸";
-      document.getElementById("sound").play();
+<audio id="sound" src="https://www.soundjay.com/button/beep-07.mp3"></audio>
 
-      // فلوس كيطيرو
-      for (let i = 0; i < 20; i++) {
-        let money = document.createElement("div");
-        money.className = "money";
-        money.innerHTML = "💸";
-        money.style.left = Math.random() * 100 + "vw";
-        money.style.animationDuration = (Math.random() * 3 + 2) + "s";
-        document.body.appendChild(money);
-      }
-    }
+<script>
+function like() {
+  document.getElementById("msg").innerHTML = "😎🔥 مرحبا بك ف Karim Bank 💸";
+  document.getElementById("sound").play();
+}
 
-    function runAway() {
-      let btn = document.getElementById("runBtn");
-
-      let x = Math.random() * (window.innerWidth - 100);
-      let y = Math.random() * (window.innerHeight - 100);
-
-      btn.style.left = x + "px";
-      btn.style.top = y + "px";
-
-      let rotate = Math.random() * 360;
-      btn.style.transform = "rotate(" + rotate + "deg)";
-
-      document.getElementById("msg").innerHTML = "😂 مستحيل تضغط عليا!";
-    }
-  </script>
+function runAway() {
+  let btn = document.getElementById("runBtn");
+  btn.style.top = Math.random() * 400 + "px";
+  btn.style.left = Math.random() * 400 + "px";
+}
+</script>
 
 </body>
 </html>
