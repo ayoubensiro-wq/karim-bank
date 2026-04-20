@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Karim Bank 😎</title>
+<meta charset="UTF-8">
+<title>Karim Bank 😎</title>
 
-  <style>
-    body {
-      text-align: center;
-      background: linear-gradient(135deg, black, #0f2027);
-      color: white;
-      font-family: Arial;
-    }
+<style>
+body {
+    text-align: center;
+    background: linear-gradient(135deg, black, #0f2027);
+    color: white;
+    font-family: Arial;
+    overflow: hidden;
+}
 
-    h1 {
-      font-size: 40px;
-      margin-top: 30px;
-    }
+h1 {
+    font-size: 40px;
+}
 
-    img {
-      margin: 10px;
-      border-radius: 10px;
-    }
+img {
+    margin: 10px;
+    border-radius: 10px;
+}
 
-    button {
-      padding: 15px 25px;
-      font-size: 18px;
-      margin: 10px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-    }
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
 
-    #yesBtn {
-      background: green;
-      color: white;
-    }
+#yesBtn {
+    background: green;
+    color: white;
+}
 
-    #runBtn {
-      position: absolute;
-      background: red;
-      color: white;
-    }
-  </style>
+#runBtn {
+    position: absolute;
+    background: red;
+    color: white;
+}
+
+.money {
+    position: absolute;
+    width: 40px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    from { top: -50px; }
+    to { top: 100vh; }
+}
+</style>
+
 </head>
 
 <body>
@@ -51,10 +64,10 @@
 <img src="karim.jpeg" width="200">
 <img src="police.png.webp" width="200">
 
-<h2>واش بغيتي تربح فلوس؟ 💸😏</h2>
+<h2>واش بغيتي تربح فلوس؟ 💸</h2>
 
 <button id="yesBtn" onclick="like()">نعم 😍🔥</button>
-<button id="runBtn" onmouseover="runAway()">لا 😅🚶</button>
+<button id="runBtn" onmouseover="runAway()">لا 😜</button>
 
 <p id="msg" style="margin-top:50px; font-size:20px;"></p>
 
@@ -62,14 +75,24 @@
 
 <script>
 function like() {
-  document.getElementById("msg").innerHTML = "😎🔥 مرحبا بك ف Karim Bank 💸";
-  document.getElementById("sound").play();
+    document.getElementById("msg").innerHTML = "😎🔥 مرحبا بك ف Karim Bank 💸";
+    document.getElementById("sound").play();
 }
 
 function runAway() {
-  let btn = document.getElementById("runBtn");
-  btn.style.top = Math.random() * 400 + "px";
-  btn.style.left = Math.random() * 400 + "px";
+    let btn = document.getElementById("runBtn");
+    btn.style.top = Math.random() * 400 + "px";
+    btn.style.left = Math.random() * 400 + "px";
+}
+
+// money rain
+for (let i = 0; i < 20; i++) {
+    let money = document.createElement("img");
+    money.src = "https://cdn-icons-png.flaticon.com/512/2331/2331970.png";
+    money.className = "money";
+    money.style.left = Math.random() * 100 + "vw";
+    money.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(money);
 }
 </script>
 
